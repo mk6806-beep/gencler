@@ -392,14 +392,21 @@ section[id]{scroll-margin-top:84px}
 @media (max-width:860px){
   .burger{display:block}
   .head__cta{display:none}
-  .nav{position:absolute; top:100%; left:0; right:0; background:var(--kara);
-    flex-direction:column; align-items:stretch; gap:0;
-    padding:.8rem var(--pad) 1.5rem; border-bottom:1px solid var(--hair-dark);
-    transform:translateY(-8px); opacity:0; pointer-events:none;
-    transition:opacity .28s, transform .28s var(--ease)}
+  /* Vollbildmenue: deckt die ganze Seite, damit die Grenze eindeutig ist. */
+  .nav{position:fixed; inset:0; z-index:1; background:var(--kara);
+    flex-direction:column; align-items:stretch; justify-content:center; gap:0;
+    padding:calc(84px + 1.4rem) var(--pad) 2.2rem; overflow-y:auto;
+    transform:translateY(-10px); opacity:0; pointer-events:none;
+    transition:opacity .3s, transform .32s var(--ease)}
   .nav.open{opacity:1; transform:none; pointer-events:auto}
+  /* Wappen und Schliessen-Knopf bleiben ueber der Menueflaeche bedienbar. */
+  .brand,.burger{position:relative; z-index:2}
   .head.menu-open{background:var(--kara); backdrop-filter:none; -webkit-backdrop-filter:none}
-  .nav a{padding:.9rem .2rem; font-size:1.03rem; border-bottom:1px solid var(--hair-dark)}
+  body.menu-lock{overflow:hidden}
+  .nav a{padding:1.05rem .1rem; font-size:1.3rem; font-family:var(--display);
+    font-variation-settings:"wdth" 108,"wght" 700; text-transform:uppercase;
+    letter-spacing:-.01em; color:var(--on-dark); border-bottom:1px solid var(--hair-dark)}
+  .nav a:first-child{border-top:1px solid var(--hair-dark)}
   .nav a::after{display:none}
   .row,.game{grid-template-columns:76px 1fr; row-gap:.3rem}
   .row__lg{grid-column:2; text-align:left}
@@ -861,6 +868,7 @@ section[id]{scroll-margin-top:84px}
   burger.addEventListener("click", function(){
     var open = nav.classList.toggle("open");
     head.classList.toggle("menu-open", open);
+    document.body.classList.toggle("menu-lock", open);
     burger.setAttribute("aria-expanded", open ? "true" : "false");
     burger.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
   });
@@ -868,6 +876,7 @@ section[id]{scroll-margin-top:84px}
     if(e.target.tagName === "A"){
       nav.classList.remove("open");
       head.classList.remove("menu-open");
+      document.body.classList.remove("menu-lock");
       burger.setAttribute("aria-expanded","false");
     }
   });
