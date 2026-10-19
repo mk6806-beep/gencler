@@ -296,6 +296,22 @@ section[id]{scroll-margin-top:84px}
 .widget__box{background:#fff; color:#12151a; padding:.5rem; min-height:220px; overflow-x:auto}
 .widget__box iframe{width:100%; border:0; display:block}
 .widget__src{margin-top:.7rem; font-size:.76rem; color:var(--on-dark-mute)}
+/* Dieselben Reiter auf hellem Abschnitt (Die Zweite). */
+.section--light .tabs button{border-color:var(--hair-light); color:var(--on-light-mute)}
+.section--light .tabs button:hover{color:var(--on-light); border-color:rgba(0,0,0,.34)}
+.section--light .tabs button[aria-selected="true"]{background:var(--kirmizi-d);
+  border-color:var(--kirmizi-d); color:#fff}
+.section--light .widget__box{border:1px solid var(--hair-light)}
+.section--light .widget__src{color:var(--on-light-mute)}
+/* Beschriftung ueber den Reitern: sagt, zu welcher Mannschaft sie gehoeren. */
+.tabs-label{font-family:var(--text); font-size:.95rem; font-weight:600; color:var(--on-dark);
+  margin-bottom:.9rem; display:flex; align-items:flex-start; gap:.7rem; line-height:1.45}
+.tabs-label::before{content:""; width:5px; height:17px; margin-top:.18rem;
+  background:var(--kirmizi); flex:none}
+.tabs-label em{font-style:normal; font-weight:400; color:var(--on-dark-mute)}
+.section--light .tabs-label{color:var(--on-light)}
+.section--light .tabs-label::before{background:var(--kirmizi-d)}
+.section--light .tabs-label em{color:var(--on-light-mute)}
 
 /* ---- Mitglied / Kontakt ---- */
 .join{display:grid; grid-template-columns:1fr 400px; gap:clamp(2rem,4.5vw,3.6rem); align-items:start}
@@ -618,9 +634,9 @@ section[id]{scroll-margin-top:84px}
   <div class="wrap">
     <div class="sec-head rv">
       <div class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <div class="h-sub">Herren</div>
+      <div class="h-sub">Erste Mannschaft</div>
       <h2 class="h-sec">Spiele &amp; Tabelle</h2>
-      <p class="lede">Direkt aus dem DFBnet — Ergebnisse, Termine und Tabellenstand aktualisieren sich von selbst.</p>
+      <p class="lede">Direkt aus dem DFBnet — Ergebnisse, Termine und Tabellenstand der Ersten aktualisieren sich von selbst.</p>
     </div>
 
     <!-- =================================================================
@@ -630,7 +646,8 @@ section[id]{scroll-margin-top:84px}
          Widgets verwalten oder Adresse aendern: next.fussball.de/widgets
          ================================================================= -->
     <div class="rv">
-      <div class="tabs" role="tablist" aria-label="Ansicht wählen">
+      <div class="tabs-label"><span>Erste Mannschaft <em>— Kreisoberliga Darmstadt/Groß-Gerau</em></span></div>
+      <div class="tabs" role="tablist" aria-label="Ansicht der ersten Mannschaft wählen">
         <button type="button" role="tab" id="tab-spiele" aria-controls="panel-spiele" aria-selected="true">Spiele</button>
         <button type="button" role="tab" id="tab-tabelle" aria-controls="panel-tabelle" aria-selected="false">Tabelle</button>
       </div>
@@ -646,7 +663,7 @@ section[id]{scroll-margin-top:84px}
                 style="width: 100%"
               ></div>
             </div>
-            <p class="widget__src">Letzte und kommende Spiele der ersten Mannschaft.</p>
+            <p class="widget__src">Letzte und kommende Spiele der <b>ersten</b> Mannschaft.</p>
           </div>
         </div>
 
@@ -660,7 +677,7 @@ section[id]{scroll-margin-top:84px}
                 style="width: 100%"
               ></div>
             </div>
-            <p class="widget__src">Kreisoberliga Darmstadt/Groß-Gerau.</p>
+            <p class="widget__src">Tabelle der Kreisoberliga Darmstadt/Groß-Gerau — Liga der <b>ersten</b> Mannschaft.</p>
           </div>
         </div>
       </div>
@@ -692,6 +709,45 @@ section[id]{scroll-margin-top:84px}
         <span>Groß-Gerau Nord. Die Zweite ist der Weg aus der eigenen Jugend in den Aktivenbereich — und die Mannschaft für alle, die nach Jahren im Verein weiter auf dem Platz stehen wollen.</span>
       </figcaption>
     </figure>
+
+    <!-- Widgets der zweiten Mannschaft, ebenfalls live aus dem DFBnet. -->
+    <div class="rv" style="margin-top:clamp(2.2rem,4vw,3rem)">
+      <div class="tabs-label"><span>Zweite Mannschaft <em>— Kreisliga C Groß-Gerau Nord</em></span></div>
+      <div class="tabs" role="tablist" aria-label="Ansicht der zweiten Mannschaft wählen">
+        <button type="button" role="tab" id="tab2-spiele" aria-controls="panel2-spiele" aria-selected="true">Spiele</button>
+        <button type="button" role="tab" id="tab2-tabelle" aria-controls="panel2-tabelle" aria-selected="false">Tabelle</button>
+      </div>
+
+      <div class="panels">
+        <div class="panel is-on" id="panel2-spiele" role="tabpanel" aria-labelledby="tab2-spiele">
+          <div class="widget">
+            <div class="widget__box">
+              <div
+                class="fussballde_widget"
+                data-id="5024362f-7cea-472d-b236-146c9e21f127"
+                data-type="team-matches"
+                style="width: 100%"
+              ></div>
+            </div>
+            <p class="widget__src">Letzte und kommende Spiele der <b>zweiten</b> Mannschaft.</p>
+          </div>
+        </div>
+
+        <div class="panel" id="panel2-tabelle" role="tabpanel" aria-labelledby="tab2-tabelle">
+          <div class="widget">
+            <div class="widget__box">
+              <div
+                class="fussballde_widget"
+                data-id="726dc997-1bb4-4a16-baf1-8e70de628d9c"
+                data-type="table"
+                style="width: 100%"
+              ></div>
+            </div>
+            <p class="widget__src">Tabelle der Kreisliga C Groß-Gerau Nord — Liga der <b>zweiten</b> Mannschaft.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -915,14 +971,18 @@ section[id]{scroll-margin-top:84px}
   /* --- Reiter fuer Spiele und Tabelle ---
      Der inaktive Bereich bleibt im Layout bestehen und wird nur ausgeblendet,
      damit die Widgets von fussball.de ihre Hoehe korrekt ermitteln koennen. */
-  var tabs = document.querySelectorAll('.tabs [role="tab"]');
-  tabs.forEach(function(tab){
-    tab.addEventListener("click", function(){
-      tabs.forEach(function(t){
-        var on = (t === tab);
-        t.setAttribute("aria-selected", on ? "true" : "false");
-        var panel = document.getElementById(t.getAttribute("aria-controls"));
-        if(panel) panel.classList.toggle("is-on", on);
+  /* Jede Reitergruppe schaltet nur ihre eigenen Bereiche — sonst wuerde ein
+     Klick bei der Ersten auch die Ansicht der Zweiten umstellen. */
+  document.querySelectorAll(".tabs").forEach(function(gruppe){
+    var tabs = gruppe.querySelectorAll('[role="tab"]');
+    tabs.forEach(function(tab){
+      tab.addEventListener("click", function(){
+        tabs.forEach(function(t){
+          var on = (t === tab);
+          t.setAttribute("aria-selected", on ? "true" : "false");
+          var panel = document.getElementById(t.getAttribute("aria-controls"));
+          if(panel) panel.classList.toggle("is-on", on);
+        });
       });
     });
   });
