@@ -392,12 +392,13 @@ section[id]{scroll-margin-top:84px}
 @media (max-width:860px){
   .burger{display:block}
   .head__cta{display:none}
-  .nav{position:absolute; top:100%; left:0; right:0; background:rgba(8,9,12,.97);
-    backdrop-filter:blur(18px); flex-direction:column; align-items:stretch; gap:0;
+  .nav{position:absolute; top:100%; left:0; right:0; background:var(--kara);
+    flex-direction:column; align-items:stretch; gap:0;
     padding:.8rem var(--pad) 1.5rem; border-bottom:1px solid var(--hair-dark);
     transform:translateY(-8px); opacity:0; pointer-events:none;
     transition:opacity .28s, transform .28s var(--ease)}
   .nav.open{opacity:1; transform:none; pointer-events:auto}
+  .head.menu-open{background:var(--kara); backdrop-filter:none; -webkit-backdrop-filter:none}
   .nav a{padding:.9rem .2rem; font-size:1.03rem; border-bottom:1px solid var(--hair-dark)}
   .nav a::after{display:none}
   .row,.game{grid-template-columns:76px 1fr; row-gap:.3rem}
@@ -859,12 +860,14 @@ section[id]{scroll-margin-top:84px}
 
   burger.addEventListener("click", function(){
     var open = nav.classList.toggle("open");
+    head.classList.toggle("menu-open", open);
     burger.setAttribute("aria-expanded", open ? "true" : "false");
     burger.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
   });
   nav.addEventListener("click", function(e){
     if(e.target.tagName === "A"){
       nav.classList.remove("open");
+      head.classList.remove("menu-open");
       burger.setAttribute("aria-expanded","false");
     }
   });
