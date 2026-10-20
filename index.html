@@ -182,18 +182,18 @@ section[id]{scroll-margin-top:84px}
 .ig svg{width:17px; height:17px; flex:none}
 
 /* ---- Laufband ---- */
-.ticker{background:var(--kirmizi); color:#fff; overflow:hidden; padding:.8rem 0;
+.ticker{background:var(--kirmizi); color:#fff; overflow:hidden; padding:.58rem 0;
   border-block:1px solid rgba(0,0,0,.25)}
 .ticker__track{display:flex; width:max-content; animation:slide 46s linear infinite}
-.ticker span{font-family:var(--display); font-size:1.05rem; font-variation-settings:"wdth" 112,"wght" 700;
+.ticker span{font-family:var(--display); font-size:.86rem; font-variation-settings:"wdth" 112,"wght" 700;
   text-transform:uppercase; letter-spacing:.03em; padding-inline:1.3rem; white-space:nowrap;
   display:flex; align-items:center; gap:1.3rem}
-.ticker span::after{content:""; width:7px; height:7px; background:#000; display:block; flex:none}
+.ticker span::after{content:""; width:6px; height:6px; background:#000; display:block; flex:none}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* ---- Partnerleiste: laeuft nach links, Raender blenden weich aus ---- */
 .pband{background:#fff; border-bottom:1px solid var(--hair-light);
-  padding-block:clamp(1.5rem,3.4vw,2.4rem)}
+  padding-block:clamp(1.15rem,2.4vw,1.8rem)}
 .pband__lab{display:flex; align-items:center; justify-content:center; gap:.55rem;
   margin-bottom:clamp(1rem,2.2vw,1.6rem); text-decoration:none;
   font-family:var(--text); font-weight:700; font-size:.68rem; letter-spacing:.17em;
@@ -210,7 +210,7 @@ section[id]{scroll-margin-top:84px}
 .pband:hover .pband__track,.pband:focus-within .pband__track{animation-play-state:paused}
 .pband__i{flex:none; display:flex; align-items:center; justify-content:center;
   padding-inline:clamp(1.5rem,3.6vw,3rem)}
-.pband__i img{height:clamp(36px,5.8vw,70px); width:auto; display:block;
+.pband__i img{height:clamp(58px,9.2vw,116px); width:auto; display:block;
   transition:transform .3s var(--ease)}
 .pband__i:hover img{transform:scale(1.07)}
 @keyframes pslide{to{transform:translateX(var(--shift,-50%))}}
@@ -456,8 +456,8 @@ section[id]{scroll-margin-top:84px}
   .hero{padding-top:118px; padding-bottom:2.8rem}
   .hero__blurb{font-size:1rem; margin-top:1.4rem; max-width:none}
   .hero__meta{margin-top:1.7rem; padding-top:1.2rem; flex-direction:column; gap:.7rem; align-items:flex-start}
-  .ticker{padding:.7rem 0}
-  .ticker span{font-size:.95rem; padding-inline:1rem; gap:1rem}
+  .ticker{padding:.5rem 0}
+  .ticker span{font-size:.78rem; padding-inline:.9rem; gap:.9rem}
   .pband__lab{font-size:.62rem; letter-spacing:.14em}
   .widget__box{padding:0; -webkit-overflow-scrolling:touch}
   .tabs button{flex:1; text-align:center}
@@ -620,15 +620,15 @@ section[id]{scroll-margin-top:84px}
 
     <div class="teams rv" id="teamlist">
       <div class="row"><span class="row__bar" aria-hidden="true"></span>
-        <span class="row__age">U7</span><span class="row__name">G-Junioren</span><span class="row__time"><i>Training:</i>Mi + Fr&nbsp;&nbsp;16:30–17:30 Uhr</span><span class="row__lg">Kinderfußball</span></div>
+        <span class="row__age">U7</span><span class="row__name">G-Junioren</span><span class="row__time"><i>Training:</i>Mo + Fr&nbsp;&nbsp;16:30–17:30 Uhr</span><span class="row__lg">Kinderfußball</span></div>
       <div class="row"><span class="row__bar" aria-hidden="true"></span>
-        <span class="row__age">U9</span><span class="row__name">F-Junioren</span><span class="row__time"><i>Training:</i>Mi + Fr&nbsp;&nbsp;16:30–18:00 Uhr</span><span class="row__lg">Kinderfußball</span></div>
+        <span class="row__age">U9</span><span class="row__name">F-Junioren</span><span class="row__time"><i>Training:</i>Mo + Fr&nbsp;&nbsp;16:30–18:00 Uhr</span><span class="row__lg">Kinderfußball</span></div>
       <div class="row"><span class="row__bar" aria-hidden="true"></span>
-        <span class="row__age">U11</span><span class="row__name">E-Junioren</span><span class="row__time"><i>Training:</i>Mi + Fr&nbsp;&nbsp;16:30–18:00 Uhr</span><span class="row__lg">Kreisliga A</span></div>
+        <span class="row__age">U11</span><span class="row__name">E-Junioren</span><span class="row__time"><i>Training:</i>Mo + Fr&nbsp;&nbsp;16:30–18:00 Uhr</span><span class="row__lg">Kreisliga A</span></div>
       <div class="row"><span class="row__bar" aria-hidden="true"></span>
-        <span class="row__age">U11</span><span class="row__name">E-Junioren 2</span><span class="row__time"><i>Training:</i>Mi + Fr&nbsp;&nbsp;16:30–18:00 Uhr</span><span class="row__lg">Kreisliga A</span></div>
+        <span class="row__age">U11</span><span class="row__name">E-Junioren 2</span><span class="row__time"><i>Training:</i>Mo + Fr&nbsp;&nbsp;16:30–18:00 Uhr</span><span class="row__lg">Kreisliga A</span></div>
       <div class="row"><span class="row__bar" aria-hidden="true"></span>
-        <span class="row__age">U13</span><span class="row__name">D-Junioren</span><span class="row__time"><i>Training:</i>Mi + Fr&nbsp;&nbsp;16:30–18:00 Uhr</span><span class="row__lg">Kreisliga A</span></div>
+        <span class="row__age">U13</span><span class="row__name">D-Junioren</span><span class="row__time"><i>Training:</i>Mo + Fr&nbsp;&nbsp;16:30–18:00 Uhr</span><span class="row__lg">Kreisliga A</span></div>
       <div class="row"><span class="row__bar" aria-hidden="true"></span>
         <span class="row__age">II</span><span class="row__name">Herren II</span><span class="row__time"><i>Training:</i>Mi + Fr&nbsp;&nbsp;19:30–21:00 Uhr</span><span class="row__lg">Kreisliga C Groß-Gerau Nord</span></div>
       <div class="row"><span class="row__bar" aria-hidden="true"></span>
